@@ -6,10 +6,8 @@
 </head>
 <body>
     <div class="container">
-        <div id="buttons">
-            <button id="musicButton" class="christmas-button">MUSIC</button>
-            <button id="playButton" class="christmas-button" style="display:none;">VIDEO</button>
-        </div>
+        <button id="musicButton" class="christmas-button">MUSIC</button>
+        <button id="playButton" class="christmas-button" style="visibility:hidden; opacity:0;">VIDEO</button>
         <div id="audioPlayer" style="display:none;">
             <audio controls>
                 <source src="Song.mp3" type="audio/mpeg">
@@ -31,18 +29,21 @@
         var audioPlayer = document.querySelector('#audioPlayer audio');
         var videoContainer = document.getElementById("video");
         var imageDisplay = document.getElementById("imageDisplay");
-        var images = ['image1.jpg', 'image2.jpg', 'image3.jpg']; // Replace with your image filenames
+        var images = ['image1.jpg', 'image2.jpg', 'image3.jpg']; // Replace with your actual image filenames
 
         musicButton.onclick = function() {
-            this.style.display = 'none'; // Hide the music button
-            playButton.style.display = 'block'; // Show the video button
-            audioPlayer.style.display = 'block';
+            this.style.visibility = 'hidden'; // Hide the music button
+            this.style.opacity = '0';
+            playButton.style.visibility = 'visible'; // Show the video button
+            playButton.style.opacity = '1';
             audioPlayer.play();
+            audioPlayer.style.display = 'block';
         };
 
         playButton.onclick = function() {
             videoContainer.style.display = 'block';
-            this.style.display = 'none'; // Hide the video button
+            this.style.visibility = 'hidden'; // Hide the video button
+            this.style.opacity = '0';
             videoContainer.children[0].play(); // Play the video
             startImageFlash();
         };
@@ -54,7 +55,6 @@
                     counter = 0;
                 }
                 imageDisplay.style.backgroundImage = 'url(' + images[counter] + ')';
-                imageDisplay.style.backgroundSize = 'contain'; // Ensure the image fits well
                 counter++;
             }, 3000); // Change image every 3 seconds
         }
