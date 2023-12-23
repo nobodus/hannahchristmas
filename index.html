@@ -6,8 +6,10 @@
 </head>
 <body>
     <div class="container">
-        <button id="musicButton" class="christmas-button">MUSIC</button>
-        <button id="playButton" class="christmas-button" style="display:none;">VIDEO</button>
+        <div id="buttons">
+            <button id="musicButton" class="christmas-button">MUSIC</button>
+            <button id="playButton" class="christmas-button" style="display:none;">VIDEO</button>
+        </div>
         <div id="audioPlayer" style="display:none;">
             <audio controls>
                 <source src="Song.mp3" type="audio/mpeg">
@@ -15,7 +17,10 @@
             </audio>
         </div>
         <div id="video" style="display:none;">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/tLd9N2jLBTY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <video width="560" height="315" controls>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 
@@ -23,9 +28,8 @@
         document.getElementById("musicButton").onclick = function() {
             var audioPlayer = document.querySelector('#audioPlayer audio');
             this.style.display = 'none';  // Hide the music button
-            document.getElementById("playButton").style.display = 'block'; // Show the video button
+            document.getElementById("playButton").style.display = 'inline-block'; // Show the video button
             if (audioPlayer) {
-                audioPlayer.style.display = 'block';
                 audioPlayer.play();
             }
         };
