@@ -55,4 +55,18 @@ body {
 
 #audioPlayer audio, #video video {
     width: 100%; /* Ensure audio and video tags fill their containers */
-   
+}
+
+.image-container {
+    width: 100%; /* Match the width of the container */
+    height: auto; /* Adjust height automatically */
+    margin-top: 20px; /* Space between the video and images */
+    text-align: center; /* Center images within the container */
+}
+
+.image-container img {
+    max-width: 100%; /* Ensure image is responsive and fits well */
+    max-height: 150px; /* Maximum height for the images */
+    display: inline-block; /* Display images inline */
+    margin: 0 10px; /* Add some space around images */
+}
