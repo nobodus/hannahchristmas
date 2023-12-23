@@ -10,10 +10,12 @@ body {
     position: relative;
     width: 80%;
     margin: auto;
+    max-width: 560px; /* Set the max-width to match the video width */
 }
 
 #buttons {
     position: relative;
+    margin-bottom: 20px; /* Add space between the buttons and the video */
 }
 
 .christmas-button {
@@ -22,32 +24,38 @@ body {
     padding: 15px 30px;
     font-size: 22px;
     font-weight: bold;
-    border: 2px solid white;
+    border: none;
     border-radius: 5px; /* Rounded corners */
     cursor: pointer;
     box-shadow: 0 4px #999;
-    margin-top: 20px;
+    outline: none; /* Remove outline on focus for aesthetics */
     transition: all 0.3s ease;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative; /* Adjusted for inline-block display */
+    margin: 0 auto; /* Center the button */
+    display: block; /* Make the button a block to fill the container */
 }
 
 .christmas-button:hover {
     background-color: #a8322d; /* A darker shade of red */
-    border-color: #ddd;
-    transform: scale(1.05) translateX(-50%);
+    box-shadow: 0 5px #666;
+    transform: translateY(-2px);
 }
 
 .christmas-button:active {
-    background-color: #a8322d;
+    background-color: #900;
     box-shadow: 0 2px #666;
-    transform: translateY(2px) translateX(-50%);
+    transform: translateY(2px);
 }
 
 #audioPlayer, #video {
-    margin-top: 20px;
-    text-align: center;
+    width: 100%; /* Match the width of the container */
+    display: block; /* Ensure it's a block-level element */
+    margin: 0 auto; /* Center within the container */
+}
+
+#audioPlayer audio, #video video {
+    width: 100%; /* Ensure audio and video tags fill their containers */
+    max-width: 560px; /* Optional: set a max-width to match video size */
 }
 
 .image-container {
@@ -59,4 +67,5 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: 1; /* Ensure it's above the background */
 }
