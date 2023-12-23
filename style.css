@@ -10,23 +10,27 @@ body {
     margin: auto;
 }
 
-button {
+.christmas-button {
     background-color: #c0392b; /* Christmas Red */
     color: white;
-    padding: 10px 20px;
-    font-size: 20px;
-    border: none;
+    padding: 15px 30px;
+    font-size: 22px;
+    font-weight: bold;
+    border: 2px solid white;
     border-radius: 5px; /* Rounded corners */
     cursor: pointer;
     box-shadow: 0 4px #999;
     margin-top: 20px;
+    transition: all 0.3s ease;
 }
 
-button:hover {
+.christmas-button:hover {
     background-color: #a8322d; /* A darker shade of red */
+    border-color: #ddd;
+    transform: scale(1.05);
 }
 
-button:active {
+.christmas-button:active {
     background-color: #a8322d;
     box-shadow: 0 2px #666;
     transform: translateY(2px);
