@@ -4,18 +4,21 @@ body {
     background-color: #f3f3f3;
     padding-top: 50px;
     margin: 0;
+    height: 100vh; /* Make the body take up full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Align container vertically */
+    align-items: center; /* Align container horizontally */
 }
 
 .container {
-    position: relative;
     width: 80%;
     margin: auto;
     max-width: 560px; /* Set the max-width to match the video width */
 }
 
-#buttons {
-    position: relative;
-    margin-bottom: 20px; /* Add space between the buttons and the video */
+#button-container {
+    margin-bottom: 20px; /* Add some space between the buttons and the video */
 }
 
 .christmas-button {
@@ -28,11 +31,8 @@ body {
     border-radius: 5px; /* Rounded corners */
     cursor: pointer;
     box-shadow: 0 4px #999;
-    outline: none; /* Remove outline on focus for aesthetics */
+    margin: 10px; /* Add space around the buttons */
     transition: all 0.3s ease;
-    position: relative; /* Adjusted for inline-block display */
-    margin: 0 auto; /* Center the button */
-    display: block; /* Make the button a block to fill the container */
 }
 
 .christmas-button:hover {
@@ -50,7 +50,6 @@ body {
 #audioPlayer, #video {
     width: 100%; /* Match the width of the container */
     display: block; /* Ensure it's a block-level element */
-    margin: 0 auto; /* Center within the container */
 }
 
 #audioPlayer audio, #video video {
@@ -61,7 +60,6 @@ body {
     width: 100%; /* Match the width of the container */
     height: auto; /* Adjust height automatically */
     margin-top: 20px; /* Space between the video and images */
-    text-align: center; /* Center images within the container */
 }
 
 .image-container img {
