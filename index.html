@@ -6,8 +6,8 @@
 </head>
 <body>
     <div class="container">
-        <button id="musicButton">MUSIC</button>
-        <button id="playButton" style="display:none;">VIDEO</button>
+        <button id="musicButton" class="christmas-button">MUSIC</button>
+        <button id="playButton" class="christmas-button" style="display:none;">VIDEO</button>
         <div id="audioPlayer" style="display:none;">
             <audio controls>
                 <source src="Song.mp3" type="audio/mpeg">
@@ -22,7 +22,8 @@
     <script>
         document.getElementById("musicButton").onclick = function() {
             var audioPlayer = document.querySelector('#audioPlayer audio');
-            document.getElementById("playButton").style.display = 'block';
+            this.style.display = 'none';  // Hide the music button
+            document.getElementById("playButton").style.display = 'block'; // Show the video button
             if (audioPlayer) {
                 audioPlayer.style.display = 'block';
                 audioPlayer.play();
