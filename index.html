@@ -27,7 +27,7 @@
     <script>
         document.getElementById("musicButton").onclick = function() {
             var audioPlayer = document.querySelector('#audioPlayer audio');
-            this.style.display = 'none';  // Hide the music button
+            this.style.display = 'none'; // Hide the music button
             document.getElementById("playButton").style.display = 'inline-block'; // Show the video button
             if (audioPlayer) {
                 audioPlayer.play();
@@ -35,6 +35,7 @@
         };
         document.getElementById("playButton").onclick = function() {
             document.getElementById("video").style.display = 'block';
+            this.style.display = 'none'; // Hide the video button
         };
     </script>
 </body>
