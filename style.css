@@ -10,15 +10,28 @@ body {
     margin: auto;
 }
 
-#playButton {
-    background-color: #ff0000;
+button {
+    background-color: #c0392b; /* Christmas Red */
     color: white;
     padding: 10px 20px;
     font-size: 20px;
     border: none;
+    border-radius: 5px; /* Rounded corners */
     cursor: pointer;
+    box-shadow: 0 4px #999;
+    margin-top: 20px;
 }
 
-#playButton:hover {
-    background-color: #cc0000;
+button:hover {
+    background-color: #a8322d; /* A darker shade of red */
+}
+
+button:active {
+    background-color: #a8322d;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+#audioPlayer, #video {
+    margin-top: 20px;
 }
