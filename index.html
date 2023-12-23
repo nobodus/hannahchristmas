@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hannah's Christmas Surprise</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button id="playButton">MERRY CHRISTMAS, HANNAH</button>
+        <div id="video" style="display:none;">
+            <iframe width="560" height="315" src="https://www.youtube.com/watch?v=gC7EshcHD2g" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("playButton").onclick = function() {
+            document.getElementById("video").style.display = 'block';
+        };
+    </script>
+</body>
+</html>
